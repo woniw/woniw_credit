@@ -26,6 +26,11 @@
         .login_text{
             margin-top: 200px;
         }
+
+        .form_to_error_message_gap{
+            height: 15px;
+            width: 1px;
+        }
     </style>
 
     <div class="darker_background">
@@ -49,6 +54,10 @@
                 </button>
             </div>
         </form>
+        <div class="form_to_error_message_gap bg-dark"></div>
+        <div class="d-flex justify-content-center">
+            <label class="text-light fs-4">{{invalid_username_message}}</label>
+        </div>
     </div>
 
     
