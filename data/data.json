@@ -1,3 +1,17 @@
 {
-    
+    "users":{
+        "Sam": {
+            "important": {
+                "password": "CatsAreBetterThanDogs#1",
+                "role": "member",
+                "permission_level": "regular"
+            },
+
+            "balance":{
+                "checking":0,
+                "savings": 0,
+                "debt": 0
+            }
+        }
+    }
 }

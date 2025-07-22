@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify, url_for, redirect
+from data.variables import data
 
+print(f"LOG: {data}")
 app = Flask(__name__)
 
 @app.route('/')
