@@ -59,6 +59,7 @@ def info_page():
     user_balance_checking = data['users'][username]['balance_info']['checking']['balance']
     user_balance_monthly_fees = data['users'][username]['balance_info']['checking']['fees']
     user_balance_savings = data['users'][username]['balance_info']['savings']
+    overdraft_fees = data['users'][username]['balance_info']['checking']['overdraft_fees']
     
     print("")
     print("")
@@ -66,6 +67,7 @@ def info_page():
     print(f"{bright_magenta}CHECKING: {user_balance_checking}")
     print(f"{bright_magenta}SAVINGS: {user_balance_savings}")
     print(f"{bright_magenta}SAVINGS: {user_balance_monthly_fees}")
+    print(f"{bright_magenta}OVERDRAFT FEES: {overdraft_fees}")
     print("")
     print("")
 
@@ -75,7 +77,8 @@ def info_page():
         password=password,
         checking=user_balance_checking,
         savings=user_balance_savings,
-        monthly_fees=user_balance_monthly_fees
+        monthly_fees=user_balance_monthly_fees,
+        overdraft=overdraft_fees
         )
 
 if __name__ == "__main__":

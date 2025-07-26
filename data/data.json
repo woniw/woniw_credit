@@ -8,12 +8,14 @@
             "important": {
                 "password": "CatsAreBetterThanDogs#1",
                 "role": "member",
-                "permission_level": "regular"
+                "permission_level": "regular",
+                "Wmail": "Sammual62@Wmail.wi"
             },
             "balance_info": {
                 "checking": {
                     "balance": 0,
                     "fees": 10,
+                    "overdraft_fees": 0,
                     "transactions": {}
                 },
                 "savings": {
