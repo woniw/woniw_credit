@@ -7,16 +7,80 @@
     <title>Account</title>
 
     <div class="center_label d-flex justify-content-center">
-        <label class="fs-1 text-light">Welcome Back {{username}}!</label>
+        <label class="welcome_text text-light">Welcome Back {{username}}</label>
     </div>
 </head>
-<body>
+<body class="bg-dark">
     <style>
-
+        .darker_background{
+            height: 700px;
+            width: 500px;
+            background-color: rgb(112, 112, 112);
+        }
+        .main_text_to_background_gap{
+            height: 60px;
+        }
+        .welcome_text{
+            font-size: 60px;
+        }
+        .checking_account_background{
+            background-color: rgb(57, 53, 53);
+            height: 290px;
+            width: 230px;
+        }
+        .savings_account_background{
+            background-color: rgb(57, 53, 53);
+            height: 290px;
+            width: 230px;       
+        }
+        .account_label_to_checking_backgroung_gap{
+            height: 35px;
+        }
+        .checking_to_savings_gap{
+            width: 20px;
+        }
+        
     </style>
+    <div class="main_text_to_background_gap"></div>
+    <div class="center d-flex justify-content-center">
 
-    <div class="darker_background d-flex justify-content-center">
+        <div class="darker_background rounded-4">
+            <div class="main_label_info_div d-flex justify-content-center">
+                <label class="fs-1 text-light pt-4">Account</label>
+            </div>
+
+            <div class="account_label_to_checking_backgroung_gap"></div>
+
+            <div class="center d-flex justify-content-center">
+
+                <div class="checking_account_background rounded-5">
+                    <div class="checking_account_main_label d-flex justify-content-center">
+                        <label class="fs-3 text-light p-2">Checking</label>
+                    </div>
+                    
+                    <div class="info_div">
+                        <label class="fs-5 text-light ps-3">Balance: ${{checking}}</label>
+                        <label class="fs-5 text-light ps-3 pt-0">Monthly Fees: ${{monthly_fees}}</label>
+                    </div>     
+                </div>
+                
+                <div class="checking_to_savings_gap"></div>
+
+                <div class="savings_account_background rounded-5">
+                    <div class="savings_account_main_label d-flex justify-content-center">
+                        <label class="fs-3 text-light p-2">Savings</label>
+                    </div>
+                    
+                    <div class="info_div">
+                        <label class="fs-5 text-light p-3">Balance: {{checking}}</label>
+                    </div>     
+                </div>
+            </div>
+
+            
+        </div>
 
     </div>
+
 </body>
 </html>

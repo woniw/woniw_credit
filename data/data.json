@@ -10,9 +10,16 @@
                 "role": "member",
                 "permission_level": "regular"
             },
-            "balance": {
-                "checking": 0,
-                "savings": 0,
+            "balance_info": {
+                "checking": {
+                    "balance": 0,
+                    "fees": 10,
+                    "transactions": {}
+                },
+                "savings": {
+                    "balance": 0,
+                    "transactions": {}
+                },
                 "debt": 0
             }
         }

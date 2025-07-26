@@ -9,6 +9,7 @@ from data.variables import data
 from data.variables import bright_blue
 from data.variables import red
 from data.variables import green
+from data.variables import bright_magenta
 
 print(f"LOG: {data}")
 app = Flask(__name__)
@@ -55,7 +56,27 @@ def info_page():
     username = data['current_login']['username']
     password = data['current_login']['password']
 
-    return render_template("information_page.html", username=username, password=password)
+    user_balance_checking = data['users'][username]['balance_info']['checking']['balance']
+    user_balance_monthly_fees = data['users'][username]['balance_info']['checking']['fees']
+    user_balance_savings = data['users'][username]['balance_info']['savings']
+    
+    print("")
+    print("")
+    print(f"{bright_magenta}---- LOG ----")
+    print(f"{bright_magenta}CHECKING: {user_balance_checking}")
+    print(f"{bright_magenta}SAVINGS: {user_balance_savings}")
+    print(f"{bright_magenta}SAVINGS: {user_balance_monthly_fees}")
+    print("")
+    print("")
+
+    return render_template(
+        "information_page.html",
+        username=username,
+        password=password,
+        checking=user_balance_checking,
+        savings=user_balance_savings,
+        monthly_fees=user_balance_monthly_fees
+        )
 
 if __name__ == "__main__":
     app.run(debug=True)
