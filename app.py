@@ -14,7 +14,7 @@ from data.variables import bright_magenta
 print(f"LOG: {data}")
 app = Flask(__name__)
 
-# FINISHED
+#TODO  ----- COMPELTE -----
 @app.route('/', methods=["GET", "POST"])
 def index():
     username = None
@@ -51,16 +51,23 @@ def index():
                 return render_template("index.html", invalid_password_message=invalid_password_message)
     return render_template('index.html')
 
+#TODO  ----- COMPELTE -----
 @app.route('/info_page')
 def info_page():
+    #? user info
     username = data['current_login']['username']
     password = data['current_login']['password']
+    wmail = data['users'][username]['important']['Wmail']
+    role = data['users'][username]['important']['role']
 
+    #? Checking info
     user_balance_checking = data['users'][username]['balance_info']['checking']['balance']
     user_balance_monthly_fees = data['users'][username]['balance_info']['checking']['fees']
-    user_balance_savings = data['users'][username]['balance_info']['savings']
     overdraft_fees = data['users'][username]['balance_info']['checking']['overdraft_fees']
     
+    #? Savings info
+    user_balance_savings = data['users'][username]['balance_info']['savings']['balance']
+
     print("")
     print("")
     print(f"{bright_magenta}---- LOG ----")
@@ -78,8 +85,21 @@ def info_page():
         checking=user_balance_checking,
         savings=user_balance_savings,
         monthly_fees=user_balance_monthly_fees,
-        overdraft=overdraft_fees
+        overdraft=overdraft_fees,
+        wmail=wmail,
+        role=role
         )
+
+#! ------ NEED TO FINISH ------
+@app.route('/transactions_page')
+def transactions_page():
+    return render_template("transaction_page.html")
+     
+#TODO  ----- COMPELTE -----
+@app.route('/redirect_to_transaction_page')
+def redirect_to_transaction_page():
+    return redirect(url_for('transactions_page'))
+
 
 if __name__ == "__main__":
     app.run(debug=True)

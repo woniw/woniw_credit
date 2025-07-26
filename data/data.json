@@ -9,7 +9,7 @@
                 "password": "CatsAreBetterThanDogs#1",
                 "role": "member",
                 "permission_level": "regular",
-                "Wmail": "Sammual62@Wmail.wi"
+                "Wmail": "Sammual62@wmail.wo"
             },
             "balance_info": {
                 "checking": {
@@ -19,10 +19,8 @@
                     "transactions": {}
                 },
                 "savings": {
-                    "balance": 0,
-                    "transactions": {}
-                },
-                "debt": 0
+                    "balance": 0
+                }
             }
         }
     }

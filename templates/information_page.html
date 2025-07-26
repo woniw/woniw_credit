@@ -30,7 +30,7 @@
         }
         .savings_account_background{
             background-color: rgb(57, 53, 53);
-            height: 290px;
+            height: 150px;
             width: 230px;       
         }
         .account_label_to_checking_backgroung_gap{
@@ -39,6 +39,13 @@
         .checking_to_savings_gap{
             width: 20px;
         }
+        .transactions_link_div{
+            padding-left: 47px;
+        }
+        .make_transaction_label{
+            margin-top: 38px;
+        }
+
         
     </style>
     <div class="main_text_to_background_gap"></div>
@@ -51,8 +58,14 @@
 
             <div class="account_label_to_checking_backgroung_gap"></div>
 
-            <div class="center d-flex justify-content-center">
+            <div class="account_info_div ms-3">
+                <label class="text text-light fs-5">Name: {{username}}</label><br>
+                <label class="text text-light fs-5">Wmail: {{wmail}}</label><br>
+                <label class="text text-light fs-5">Role: {{role}}</label>
 
+            </div>
+            <br>
+            <div class="center d-flex justify-content-center">
                 <div class="checking_account_background rounded-5">
                     <div class="checking_account_main_label d-flex justify-content-center">
                         <label class="fs-3 text-light p-2">Checking</label>
@@ -70,9 +83,9 @@
                         </div>
 
                         <div class="transactions_link_div">
-                            <a href="">
-                                <label class="text-primary fs-5 ps-3 pt-1 ">transactions</label>
-                            </a>
+                            <form action="{{url_for('redirect_to_transaction_page')}}">
+                                <button class="btn btn-dark fs-6 pt-1 ">transactions</button>
+                            </form>
                         </div>
 
                     </div>
@@ -88,8 +101,22 @@
                     <div class="info_div">
                         <label class="fs-5 text-light p-3">Balance: ${{checking}}</label>
                     </div>     
+
+
+
+
+                    <div class="make_transaction_div d-flex justify-content-center">
+                        <div class="make_transaction_label">
+                            <label class="fs-5 text text-light">Make A Transaction</label>
+                        </div>
+                    </div>
+
                 </div>
+
+
+
             </div>
+
 
             
         </div>
