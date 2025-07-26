@@ -13,6 +13,7 @@ from data.variables import green
 print(f"LOG: {data}")
 app = Flask(__name__)
 
+# FINISHED
 @app.route('/', methods=["GET", "POST"])
 def index():
     username = None
@@ -51,8 +52,10 @@ def index():
 
 @app.route('/info_page')
 def info_page():
-    
-    return render_template("information_page.html")
+    username = data['current_login']['username']
+    password = data['current_login']['password']
+
+    return render_template("information_page.html", username=username, password=password)
 
 if __name__ == "__main__":
     app.run(debug=True)
